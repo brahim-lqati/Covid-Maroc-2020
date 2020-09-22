@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+   background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 1150px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container .card {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    transition: 0.5s;
+}
+.container .card .circle {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background: #000;
+    /* clip-path: circle(140px at center 0); */
+   
+    border-radius: 20px;
+   
+}
+.container .card .circle h3 {
+    color: #fff;
+    font-size: 3em;
+    padding-top: 10px;
+    text-align: center;
+}
+.container .card .content {
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    width: 100%;
+   text-align: center;
+}
+.container .card .content p {
+    color: #666;
+    font-size: 3em;
+    
+}
+.container .card .content a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    background: #000;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.container .card:nth-child(1) .circle,
+.container .card:nth-child(1) .content a {
+    background: #ffa800;
+}
+.container .card:nth-child(2) .circle,
+.container .card:nth-child(2) .content a {
+    background: #18d26b;
+}
+.container .card:nth-child(3) .circle,
+.container .card:nth-child(3) .content a {
+    background: #ff3f3f;
+}
+
+.container .card:hover {
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.list-group{
+    max-height: 200px;
+    overflow-y: scroll;
+    position: fixed;
+    width: 500px;
+    z-index: 1;
+    visibility: hidden;
+}
+.list-group.show{
+    visibility: visible;
+}
+li a:link{
+    text-decoration: none;
+}
+li a{
+    color: slategray;
+}
+
+#popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 2;
+    margin-top: 4%;
+    text-align: center;
+}
+
+.info {
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#popup.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+
+}
+#popup h3 {
+    font-weight: bold;
+    color: white;
+}
+
+#popup div {
+    padding: 10px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+
+}
+#popup .Confirmed {
+    background-color: rgba(255, 168, 0, 0.5);
+}
+#popup .Deaths {
+    background-color: rgba(255, 63, 63, 0.5);
+}
+#popup .Recovered {
+    background-color: rgba(24, 210, 107, 0.5);
+}
+
+
+

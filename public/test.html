@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 50px;
+    background: #fff;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    
+}
+#popup.active {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+
+}
+h2,h3{
+    text-align: center;
+}
+#popup div {
+    padding: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <button onclick="toggle()">open</button>
+    <div id="popup">
+        <h2>Morocoo</h2>
+        <div style="background-color: #e9fdf2">
+            <h3>Confirmed</h3>
+            <p>Total : <span>23000</span></p>
+            <p>New : <span>23000</span></p>
+
+        </div>
+        <div style="background-color: rgba(245, 59, 87,0.6);">
+            <h3>Deaths</h3>
+            <p>Total : <span>23000</span></p>
+            <p>New : <span>23000</span></p>
+        </div>
+        <div style="background-color: rgba(255, 211, 42,0.6);">
+            <h3>Recovered</h3>
+            <p>Total : <span>23000</span></p>
+            <p>New : <span>23000</span></p>
+        </div>
+
+        <button onclick="toggle()">Close</button>
+    </div>
+
+    <script>
+        var popup = document.getElementById('popup');
+        function toggle(){
+            popup.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

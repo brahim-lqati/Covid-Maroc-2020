@@ -1,0 +1,54 @@
+
+<%- include('header',{title: 'Covid-19 Maroc 2020'}) -%>
+<style>
+    
+</style>
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="card text-center col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supportinitional content.</p>
+            </div>
+            <div class="card-footer">
+                <span class="badge badge-info"><%=data.casConfirmes.newDay %></span>
+            </div>
+        </div>
+        <div class="card text-center col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supportinitional content.</p>
+            </div>
+            <div class="card-footer">
+                <span class="badge badge-success"><%=data.recup.newDay %></span>
+            </div>
+        </div>
+    </div>
+   
+    <div class="row mb-2">
+        <div class="card text-center col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supportinitional content.</p>
+            </div>
+            <div class="card-footer">
+                <span class="badge badge-warning"><%=data.casTraitement.newDay %></span>
+            </div>
+        </div>
+        <div class="card text-center col-md-6">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supportinitional content.</p>
+            </div>
+            <div class="card-footer">
+                <span class="badge badge-danger"><%=data.deces.newDay %></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<%- include('footer') -%>

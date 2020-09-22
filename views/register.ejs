@@ -1,0 +1,94 @@
+<%- include('header',{title: 'sign-up'}) -%>
+    <style>
+        .container{
+            width: 40%;
+            margin-top: 5%;
+        }
+        label{
+          font-weight: bold;
+        }
+        h3{
+            text-align: center;
+        }
+        button{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+  <!-- navbar login register
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Covid 20-Maroc-20</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" dir="rtl">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+    <div class="container mt-5">
+        <h3>Register Form</h3>
+        <form method="POST" action="/user/sign-up">
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" name="name"
+                value="<%=data.name%>">
+                <div class="invalid-feedback">
+                  <%if(errors){ %>
+                      <% let error = errors.find(elm => elm.param === "name"); %>
+                      <%if(error){%>
+                        <script> document.getElementById('nameInput').classList.add('is-invalid')</script>
+                        <%=error.msg%>
+                      <%}%>
+                  <%}%>
+                </div> 
+              </div>
+            <div class="form-group">
+              <label for="emailInput">Email address</label>
+              <input type="text" class="form-control <%if(flash){%> is-invalid<%}%>" id="emailInput" name="email"
+              value="<%=data.email%>">
+              <div class="invalid-feedback">
+                <%if(errors){ %>
+                    <% let error = errors.find(elm => elm.param === "email"); %>
+                    <%if(error){%>
+                      <script> document.getElementById('emailInput').classList.add('is-invalid')</script>
+                      <%=error.msg%>
+                    <%}%>
+                <%}%>
+              </div> 
+            </div>
+            <div class="form-group">
+              <label for="countrySelect">Country</label>
+               <select class="form-control" name="country" id="countrySelect">
+                  <% country.forEach((e) =>{ %>
+                    <option value=<%=e%>><%=e%></option>
+                  <%})%>
+               </select>
+            </div>
+            <div class="form-group">
+              <label for="passwordInput">Password</label>
+              <input type="password" class="form-control <%if(flash){%> is-invalid<%}%>" id="passwordInput" name="password">
+              <div class="invalid-feedback">
+                <%if(errors){ %>
+                    <% let error = errors.find(elm => elm.param === "password"); %>
+                    <%if(error){%>
+                      <script> document.getElementById('passwordInput').classList.add('is-invalid')</script>
+                      <%=error.msg%>
+                    <%}%>
+                <%}%>
+              </div>                
+            </div>
+            <button type="submit" class="btn btn-primary">Sign-Up</button>
+          </form>
+    </div>
+
+
+<%- include('footer'); -%>
